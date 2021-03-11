@@ -31,7 +31,8 @@ function onMove(e) {
   y = e.clientY - canvas.offsetTop;
 
   if (!dragging) {
-    ctx.fillStyle = "#A39681";
+    ctx.strokeStyle = "#C3B9A5";
+    ctx.lineWidth = 5;
     ctx.beginPath();
     ctx.moveTo(x, y);
   } else {
