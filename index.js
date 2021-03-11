@@ -30,10 +30,16 @@ function onMove(e) {
   x = e.clientX - canvas.offsetLeft;
   y = e.clientY - canvas.offsetTop;
 
-  if (dragging) {
+  if (!dragging) {
+    ctx.fillStyle = "#A39681";
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  } else {
     objX = x + relX;
     objY = y + relY;
     draw();
+    ctx.lineTo(objX, objY);
+    ctx.stroke();
   }
 }
 
